@@ -1,0 +1,98 @@
+﻿@model Ta3lim.Database.Regiment
+
+@{
+    ViewBag.Title = "معلومات";
+}
+
+<h2>معلومات</h2>
+
+<div>
+    <h4>فوج</h4>
+    <hr />
+    
+        <h2>
+            @Html.DisplayNameFor(model => model.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Name)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Day1)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Day1)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Day2)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Day2)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Day3)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Day3)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Day4)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Day4)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Day5)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Day5)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Day6)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Day6)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Day7)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Day7)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Desc)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Desc)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Period.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Period.Name)
+        </p>
+
+    
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("العودة إلى اللائحة", "Index")
+</p>

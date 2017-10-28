@@ -1,0 +1,56 @@
+﻿@model Ta3lim.Database.Stage
+
+@{
+    ViewBag.Title = "حذف";
+}
+
+<h2>حذف</h2>
+
+<h3>هل أنت متأكد من حذف المرحلة؟</h3>
+<div>
+    <h4>مرحلة</h4>
+    <hr />
+    
+        <h2>
+            @Html.DisplayNameFor(model => model.StageName)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.StageName)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.SDate)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.SDate)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.EDate)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.EDate)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Employee.name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Employee.name)
+        </p>
+
+    
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> |
+            @Html.ActionLink("العودة إلى اللائحة", "Index")
+        </div>
+    }
+</div>

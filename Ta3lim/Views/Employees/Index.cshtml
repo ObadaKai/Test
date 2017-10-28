@@ -1,0 +1,137 @@
+﻿@model IEnumerable<Ta3lim.Database.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div ng-controller="SearchCtrl">
+
+    <h2>لائحة الموظفين</h2>
+@if (Session["Managment"] != null || Session["Basics"] != null)
+{
+    if ((bool)Session["Managment"] == true || (bool)Session["Basics"] == true)
+    {
+        <p>
+            @Html.ActionLink("انشاء جديد", "Create")
+        </p>
+    }
+}
+    <div>
+        <input type="text" name="search" id="search" ng-change="EmployeeSearchBox()" ng-model="EmployeeSearchBoxData" />
+        <input type="date" name="searchdate" id="searchdate" ng-change="EmployeeSearchBox()" ng-model="EmployeeSearchBoxDate" />
+    </div>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Period.Name)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeType.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Center.Name)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.EDate)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.SDate)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.CType)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Certificate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.surname)
+            </th>
+
+
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr ng-hide="EmployeeRazorForm">
+
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("معلومات", "Details", new { id = item.id }) |
+                    @Html.ActionLink("حذف", "Delete", new { id = item.id })
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Period.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeType.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Center.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Certificate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+            </tr>
+        }
+        <tr ng-repeat="Exam in Exams" ng-cloak ng-show="EmployeeAngularForm">
+            <td>
+                <a href="/Employees/Edit/{{Exam.ID}}">تعديل</a> |
+                <a href="/Employees/Details/{{Exam.ID}}">معلومات</a> |
+                <a href="/Employees/Delete/{{Exam.ID}}">حذف</a>
+            </td>
+            <td>{{Exam.Period}}</td>
+
+            <td>{{Exam.EmployeeType}}</td>
+            <td>{{Exam.Center}}</td>
+            <td>{{Exam.EmployeeEDate | date:'MM/p/yyyy'}}</td>
+            <td>{{Exam.EmployeeSDate | date:'MM/p/yyyy'}}</td>
+            <td>{{Exam.State}}</td>
+            <td>{{Exam.CType}}</td>
+            <td>{{Exam.Certificate}}</td>
+            <td>{{Exam.EmployeeBDate | date:'MM/p/yyyy'}}</td>
+            <td>{{Exam.surname}}</td>
+            <td>{{Exam.name}}</td>
+        </tr>
+
+    </table>
+</div>

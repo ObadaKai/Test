@@ -1,0 +1,98 @@
+﻿@model Ta3lim.Database.Presence
+
+@{
+    ViewBag.Title = "معلومات";
+}
+
+<h2>معلومات</h2>
+
+<div>
+    <h4>حضور وغياب</h4>
+    <hr />
+    
+        <h2>
+            @Html.DisplayNameFor(model => model.Date)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Date)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Desc)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Desc)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Lesson1)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Lesson1)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Lesson2)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Lesson2)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Lesson3)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Lesson3)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Lesson4)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Lesson4)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Lesson5)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Lesson5)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Lesson6)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Lesson6)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Lesson7)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Lesson7)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Student.Name)
+        </p>
+
+    
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("العودة إلى اللائحة", "Index")
+</p>

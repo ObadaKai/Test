@@ -1,0 +1,106 @@
+﻿@model Ta3lim.Database.Student
+
+@{
+    ViewBag.Title = "معلومات";
+}
+
+<h2>معلومات</h2>
+
+<div>
+    <h4>طالب</h4>
+    <hr />
+    
+        <h2>
+            @Html.DisplayNameFor(model => model.BDate)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.BDate)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Name)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Surname)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Surname)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Certificate)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Certificate)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Mark)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Mark)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.State)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.State)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.SDate)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.SDate)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.EDate)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.EDate)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Center.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Center.Name)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Regiment.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Regiment.Name)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Stage.StageName)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Stage.StageName)
+        </p>
+
+    
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("العودة إلى اللائحة", "Index")
+</p>

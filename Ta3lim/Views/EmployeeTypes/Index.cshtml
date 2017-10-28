@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Ta3lim.Database.EmployeeType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>لائحة انواع الموظفين</h2>
+@if (Session["Managment"] != null)
+{
+    if ((bool)Session["Managment"] == true)
+    {
+        <p>
+            @Html.ActionLink("انشاء جديد", "Create")
+        </p>
+    }
+}
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teaching)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Guidence)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Managment)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Basics)
+        </th>
+
+
+
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+            </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.id }) |
+                @Html.ActionLink("معلومات", "Details", new { id = item.id }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teaching)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Guidence)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Managment)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Basics)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+        </tr>
+    }
+
+</table>

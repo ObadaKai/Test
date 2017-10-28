@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fc806bfa3e024a43958af574502a42b7" Name="Diagram1" ZoomLevel="108">
+        <EntityTypeShape EntityType="TaalimModel.Center" width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaalimModel.Examination" width="1.5" PointX="9.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaalimModel.Lesson" width="1.5" PointX="5.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaalimModel.Period" width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaalimModel.Presence" width="1.5" PointX="9.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaalimModel.Regiment" width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaalimModel.Stage" width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaalimModel.Student" width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaalimModel.Study_subject" width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaalimModel.sysdiagram" width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TaalimModel.FK_Students_Centers" ManuallyRouted="false" />
+        <AssociationConnector Association="TaalimModel.FK_Examination_Stages" ManuallyRouted="false" />
+        <AssociationConnector Association="TaalimModel.FK_Examination_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="TaalimModel.FK_Examination_Study_subject" ManuallyRouted="false" />
+        <AssociationConnector Association="TaalimModel.FK_Lessons_Regiments2" ManuallyRouted="false" />
+        <AssociationConnector Association="TaalimModel.FK_Regiments_Periods" ManuallyRouted="false" />
+        <AssociationConnector Association="TaalimModel.FK_Presence_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="TaalimModel.FK_Students_Regiments" ManuallyRouted="false" />
+        <AssociationConnector Association="TaalimModel.FK_Students_Stages" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TaalimModel.DailyActivity" width="1.5" PointX="5.25" PointY="19.125" />
+        <EntityTypeShape EntityType="TaalimModel.ExamType" width="1.5" PointX="3.375" PointY="0.875" />
+        <AssociationConnector Association="TaalimModel.FK_Examination_ExamType" />
+        <EntityTypeShape EntityType="TaalimModel.Concern" width="1.5" PointX="5.25" PointY="3.375" />
+        <EntityTypeShape EntityType="TaalimModel.EmployeeType" width="1.5" PointX="0.75" PointY="3.875" />
+        <EntityTypeShape EntityType="TaalimModel.Employee" width="1.5" PointX="10.5" PointY="4.75" />
+        <AssociationConnector Association="TaalimModel.FK_Centers_Employees" />
+        <AssociationConnector Association="TaalimModel.FK_Employees_Centers" />
+        <AssociationConnector Association="TaalimModel.FK_Concerns_Employees" />
+        <AssociationConnector Association="TaalimModel.FK_DailyActivity_Employees" />
+        <AssociationConnector Association="TaalimModel.FK_Employees_EmployeeType" />
+        <AssociationConnector Association="TaalimModel.FK_Employees_Periods" />
+        <AssociationConnector Association="TaalimModel.FK_Stages_Employees" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,74 @@
+﻿@model Ta3lim.Database.Examination
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>معلومات</h2>
+
+<div>
+    <h4>امتحان</h4>
+    <hr />
+    
+        <h2>
+            @Html.DisplayNameFor(model => model.Desc)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Desc)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Mark)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Mark)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Date)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Date)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Stage.StageName)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Stage.StageName)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Student.Name)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Study_subject.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Study_subject.Name)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.ExamType.Type)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.ExamType.Type)
+        </p>
+
+    
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("العودة إلى اللائحة", "Index")
+</p>

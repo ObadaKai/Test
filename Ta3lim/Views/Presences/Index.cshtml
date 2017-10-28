@@ -1,0 +1,196 @@
+﻿@model IEnumerable<Ta3lim.Database.Presence>
+
+@{
+    ViewBag.Title = "لائحة الحضور والغياب";
+}
+<div ng-controller="SearchCtrl">
+
+    <h2>لائحة الحضور والغياب</h2>
+
+    @if (Session["Guidence"] != null)
+    {
+        if ((bool)Session["Guidence"] == true)
+        {
+            <p>
+                @Html.ActionLink("انشاء جديد", "Create")
+            </p>
+        }
+    }
+    <div>
+        <input type="text" name="search" id="search" ng-change="PresenceSearchBox()" ng-model="PresenceSearchBoxData" />
+        <input type="date" name="searchdate" id="searchdate" ng-change="PresenceSearchBox()" ng-model="PresenceSearchBoxDate" />
+    </div>
+    <table class="table">
+        <tr>
+            <th></th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Lesson7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lesson6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lesson5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lesson4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lesson3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lesson2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lesson1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.Name)
+            </th>
+
+
+
+
+
+
+
+
+
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr ng-hide="PresenceRazorForm">
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("معلومات", "Details", new { id = item.id }) |
+                    @Html.ActionLink("حذف", "Delete", new { id = item.id })
+                </td>
+
+                <td>
+                    @if (item.Lesson7 != null && item.Lesson7 == true)
+                    {
+                        @:غياب
+                    }
+                    else
+                    {
+                        @:حضور
+                    }
+                </td>
+                <td>
+                    @if (item.Lesson6 != null && item.Lesson6 == true)
+                    {
+                        @:غياب
+                    }
+                    else
+                    {
+                        @:حضور
+                    }
+                </td>
+                <td>
+                    @if (item.Lesson5 != null && item.Lesson5 == true)
+                    {
+                        @:غياب
+                    }
+                    else
+                    {
+                        @:حضور
+                    }
+                </td>
+                <td>
+                    @if (item.Lesson4 != null && item.Lesson4 == true)
+                    {
+                        @:غياب
+                    }
+                    else
+                    {
+                        @:حضور
+                    }
+                </td>
+                <td>
+                    @if (item.Lesson3 != null && item.Lesson3 == true)
+                    {
+                        @:غياب
+                    }
+                    else
+                    {
+                        @:حضور
+                    }
+                </td>
+                <td>
+                    @if (item.Lesson2 != null && item.Lesson2 == true)
+                    {
+                        @:غياب
+                    }
+                    else
+                    {
+                        @:حضور
+                    }
+                </td>
+                <td>
+                    @if (item.Lesson1 != null && item.Lesson1 == true)
+                    {
+                        @:غياب
+                    }
+                    else
+                    {
+                        @:حضور
+                    }
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desc)
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.Name)
+                </td>
+
+
+            </tr>
+        }
+        <tr ng-repeat="Exam in Exams" ng-cloak ng-show="PresenceAngularForm">
+
+
+            <td>
+                <a href="/Presences/Edit/{{Exam.ID}}">تعديل</a> |
+                <a href="/Presences/Details/{{Exam.ID}}">معلومات</a> |
+                <a href="/Presences/Delete/{{Exam.ID}}">حذف</a>
+
+            </td>
+
+
+            <td>{{Exam.Lesson7}}</td>
+            <td>{{Exam.Lesson6}}</td>
+            <td>{{Exam.Lesson5}}</td>
+            <td>{{Exam.Lesson4}}</td>
+            <td>{{Exam.Lesson3}}</td>
+            <td>{{Exam.Lesson2}}</td>
+            <td>{{Exam.Lesson1}}</td>
+            <td>{{Exam.Desc}}</td>
+            <td>{{Exam.Date | date:'MM/p/yyyy'}}</td>
+            <td>{{Exam.StudentSurname}}</td>
+            <td>{{Exam.StudentName}}</td>
+
+        </tr>
+
+    </table>
+</div>

@@ -1,0 +1,58 @@
+﻿@model Ta3lim.Database.Study_subject
+
+@{
+    ViewBag.Title = "معلومات";
+}
+
+<h2>معلومات</h2>
+
+<div>
+    <h4>مادة</h4>
+    <hr />
+    
+        <h2>
+            @Html.DisplayNameFor(model => model.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Name)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Desc)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Desc)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.FullMark)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.FullMark)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.LeastMark)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.LeastMark)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.State)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.State)
+        </p>
+
+    
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("العودة إلى اللائحة", "Index")
+</p>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Ta3lim.Database.Study_subject>
+
+@{
+    ViewBag.Title = "لائحة المواد";
+}
+
+<h2>لائحة المواد</h2>
+@if (Session["Managment"] != null)
+{
+    if ((bool)Session["Managment"] == true)
+    {
+        <p>
+            @Html.ActionLink("انشاء جديد", "Create")
+        </p>
+    }
+}
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeastMark)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.FullMark)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Desc)
+        </th>
+
+
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.id }) |
+                @Html.ActionLink("معلومات", "Details", new { id = item.id }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeastMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+    }
+
+</table>

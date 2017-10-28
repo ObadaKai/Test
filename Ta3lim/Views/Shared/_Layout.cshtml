@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("TaalimMidad", "Default", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse" style="float:right">
+                <ul class="nav navbar-nav">
+                    @if (Session["Basics"] != null)
+                    {
+                        if ((bool)Session["Basics"] == true)
+                        {
+
+
+                            <li>@Html.ActionLink("نوع الامتحان", "Index", "ExamTypes")</li>
+                            <li>@Html.ActionLink("انواع الموظفين", "Index", "EmployeeTypes")</li>
+                            <li>@Html.ActionLink("مراكز", "Index", "Centers")</li>
+                            <li>@Html.ActionLink("مراحل", "Index", "Stages")</li>
+                            <li>@Html.ActionLink("فترات", "Index", "Periods")</li>
+                        }
+
+                    }
+                    @if (Session["Managment"] != null)
+                    {
+                        if ((bool)Session["Managment"] == true)
+                        {
+
+                            <li>@Html.ActionLink("طلاب", "Index", "Students")</li>
+                            <li>@Html.ActionLink("موظفين", "Index", "Employees")</li>
+                            <li>@Html.ActionLink("فوج", "Index", "Regiments")</li>
+                            <li>@Html.ActionLink("مواد", "Index", "Study_subject")</li>
+                            <li>@Html.ActionLink("الحضور", "Index", "Presences")</li>
+                            <li>@Html.ActionLink("امتحانات", "Index", "Examinations")</li>
+                        }
+                    }
+                    @if (Session["Observing"] != null)
+                    {
+                        if ((bool)Session["Observing"] == true)
+                        {
+
+                            <li>@Html.ActionLink("نوع الامتحان", "Index", "ExamTypes")</li>
+                            <li>@Html.ActionLink("انواع الموظفين", "Index", "EmployeeTypes")</li>
+                            <li>@Html.ActionLink("مراكز", "Index", "Centers")</li>
+                            <li>@Html.ActionLink("مراحل", "Index", "Stages")</li>
+                            <li>@Html.ActionLink("فترات", "Index", "Periods")</li>
+                            <li>@Html.ActionLink("طلاب", "Index", "Students")</li>
+                            <li>@Html.ActionLink("موظفين", "Index", "Employees")</li>
+                            <li>@Html.ActionLink("فوج", "Index", "Regiments")</li>
+                            <li>@Html.ActionLink("مواد", "Index", "Study_subject")</li>
+                            <li>@Html.ActionLink("امتحانات", "Index", "Examinations")</li>
+                            <li>@Html.ActionLink("الحضور", "Index", "Presences")</li>
+                            <li>@Html.ActionLink("دروس يومية", "Index", "Lessons")</li>
+                        }
+                    }
+                    @if (Session["Guidence"] != null)
+                    {
+                        if ((bool)Session["Guidence"] == true)
+                        {
+
+                            <li>@Html.ActionLink("امتحانات", "Index", "Examinations")</li>
+                            <li>@Html.ActionLink("الحضور", "Index", "Presences")</li>
+                        }
+                    }
+                    @if (Session["Teaching"] != null)
+                    {
+                        if ((bool)Session["Teaching"] == true)
+                        {
+
+                            <li>@Html.ActionLink("امتحانات", "Index", "Examinations")</li>
+                        }
+                    }
+                    <li>@Html.ActionLink("تقديم شكوى", "Create", "Complains")</li>
+                    <li>@Html.ActionLink("تسجيل خروج", "Logout", "Home")</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content" style="text-align:right">
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/controller.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

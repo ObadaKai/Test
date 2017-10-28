@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Ta3lim.Database.Period>
+
+@{
+    ViewBag.Title = "لائحة الفترات";
+}
+
+<h2>لائحة الفترات</h2>
+@if (Session["Basics"] != null)
+{
+    if ((bool)Session["Basics"] == true)
+    {
+        <p>
+            @Html.ActionLink("انشاء جديد", "Create")
+        </p>
+    }
+}
+<table class="table">
+    <tr>
+
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Enh2ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartingTime)
+        </th>
+
+
+
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.id }) |
+                @Html.ActionLink("معلومات", "Details", new { id = item.id }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enh2ime)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.StartingTime)
+            </td>
+
+
+
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+    }
+
+</table>

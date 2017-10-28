@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Ta3lim.Database.Examination>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div ng-controller="SearchCtrl">
+    <h2>لائحة الامتحانات</h2>
+    @if (Session["Teaching"] != null)
+    {
+        if ((bool)Session["Teaching"] == true)
+        {
+            <p>
+                @Html.ActionLink("انشاء جديد", "Create")
+            </p>
+        }
+    }
+    <div>
+        <input type="text" name="search" id="search" ng-change="ExamSearchBox()" ng-model="ExamSearchBoxData" />
+        <input type="date" name="searchdate" id="searchdate" ng-change="ExamSearchBox()" ng-model="ExamSearchBoxDate" />
+    </div>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExamType.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Study_subject.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stage.StageName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+
+
+
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr ng-hide="ExamRazorForm">
+
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("معلومات", "Details", new { id = item.id }) |
+                    @Html.ActionLink("حذف", "Delete", new { id = item.id })
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExamType.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Study_subject.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stage.StageName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desc)
+                </td>
+            </tr>
+        }
+
+        <tr ng-repeat="Exam in Exams" ng-cloak ng-show="ExamAngularForm">
+            <td>
+                <a href="/Examinations/Edit/{{Exam.ID}}">تعديل</a> |
+                <a href="/Examinations/Details/{{Exam.ID}}">معلومات</a> |
+                <a href="/Examinations/Delete/{{Exam.ID}}">حذف</a>
+                @*@Html.ActionLink("Edit", "Edit", new { id =@:{{Exam.ID}}
+            }) |
+            @Html.ActionLink("Details", "Details", new { id = @:{{Exam.ID}}
+            }) |
+            @Html.ActionLink("Delete", "Delete", new { id = @:{{Exam.ID}}
+            })*@
+            </td>
+            <td>{{Exam.Mark}}</td>
+            <td>{{Exam.ExamType}}</td>
+            <td>{{Exam.Subject}}</td>
+
+            <td>{{Exam.StudentName}}</td>
+            <td>{{Exam.StageName}}</td>
+            <td>{{Exam.Date | date:'MM/p/yyyy'}}</td>
+
+            <td>{{Exam.Desc}}</td>
+        </tr>
+
+    </table>
+</div>

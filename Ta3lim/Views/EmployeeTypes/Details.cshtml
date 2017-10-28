@@ -1,0 +1,102 @@
+﻿@model Ta3lim.Database.EmployeeType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>معلومات</h2>
+
+<div>
+    <h4>نوع موظف</h4>
+    <hr />
+    
+        <h2>
+            @Html.DisplayNameFor(model => model.Type)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Type)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Basics)
+        </h2>
+
+        <p>
+            @if (Model.Basics != null && Model.Basics == true)
+            {
+                @:نعم
+            }
+            else
+            {
+                @:لا
+            }
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Managment)
+        </h2>
+
+        <p>
+            @if (Model.Managment != null && Model.Managment == true)
+            {
+                @:نعم
+            }
+            else
+            {
+                @:لا
+            }
+
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Guidence)
+        </h2>
+
+        <p>
+            @if (Model.Guidence != null && Model.Guidence == true)
+            {
+                @:نعم
+            }
+            else
+            {
+                @:لا
+            }
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Teaching)
+        </h2>
+
+        <p>
+            @if (Model.Teaching != null && Model.Teaching == true)
+            {
+                @:نعم
+            }
+            else
+            {
+                @:لا
+            }
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Observing)
+        </h2>
+
+        <p>
+            @if (Model.Observing != null && Model.Observing == true)
+            {
+                @:نعم
+            }
+            else
+            {
+                @:لا
+            }
+        </p>
+
+    
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("العودة إلى اللائحة", "Index")
+</p>

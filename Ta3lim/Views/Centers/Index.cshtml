@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Ta3lim.Database.Center>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>لائحة المراكز</h2>
+@if (Session["Basics"] != null)
+{
+    if ((bool)Session["Basics"] == true)
+    {
+        <p>
+            @Html.ActionLink("انشاء جديد", "Create")
+        </p>
+    }
+}
+<table class="table">
+    <tr>
+        <th></th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.name)
+        </th>
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.HolesN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Place)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
+
+
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.id }) |
+                @Html.ActionLink("معلومات", "Details", new { id = item.id }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.id })
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.HolesN)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+
+
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+
+        </tr>
+    }
+
+</table>

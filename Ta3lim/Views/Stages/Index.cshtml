@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Ta3lim.Database.Stage>
+
+@{
+    ViewBag.Title = "لائحة المراحل";
+}
+
+<h2>لائحة المراحل</h2>
+
+@if (Session["Basics"] != null)
+{
+    if ((bool)Session["Basics"] == true)
+    {
+        <p>
+            @Html.ActionLink("انشاء جديد", "Create")
+        </p>
+    }
+}
+
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EDate)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.SDate)
+        </th>
+
+
+
+
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.StageName)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.id }) |
+                @Html.ActionLink("معلومات", "Details", new { id = item.id }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.id })
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDate)
+            </td>
+
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.StageName)
+            </td>
+
+
+
+        </tr>
+    }
+
+</table>

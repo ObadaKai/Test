@@ -1,0 +1,42 @@
+﻿@model Ta3lim.Database.Period
+
+@{
+    ViewBag.Title = "معلومات";
+}
+
+<h2>معلومات</h2>
+
+<div>
+    <h4>فترة</h4>
+    <hr />
+    
+        <h2>
+            @Html.DisplayNameFor(model => model.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Name)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.StartingTime)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.StartingTime)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Enh2ime)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Enh2ime)
+        </p>
+
+    
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("العودة إلى اللائحة", "Index")
+</p>

@@ -1,0 +1,66 @@
+﻿@model Ta3lim.Database.Center
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>معلومات</h2>
+
+<div>
+    <h4>الموكز</h4>
+    <hr />
+    
+        <h2>
+            @Html.DisplayNameFor(model => model.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Name)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Place)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Place)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Desc)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Desc)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.State)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.State)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.HolesN)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.HolesN)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Employee.name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Employee.name)
+        </p>
+
+    
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("العودة إلى اللائحة", "Index")
+</p>

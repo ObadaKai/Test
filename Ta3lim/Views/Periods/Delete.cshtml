@@ -1,0 +1,48 @@
+﻿@model Ta3lim.Database.Period
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>حذف</h2>
+
+<h3>هل أنت متأكد من حذف الفترة؟</h3>
+<div>
+    <h4>فترة</h4>
+    <hr />
+    
+        <h2>
+            @Html.DisplayNameFor(model => model.Name)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Name)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.StartingTime)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.StartingTime)
+        </p>
+
+        <h2>
+            @Html.DisplayNameFor(model => model.Enh2ime)
+        </h2>
+
+        <p>
+            @Html.DisplayFor(model => model.Enh2ime)
+        </p>
+
+    
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> |
+            @Html.ActionLink("العودة إلى اللائحة", "Index")
+        </div>
+    }
+</div>
